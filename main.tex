@@ -11,8 +11,11 @@
 \usepackage[danish]{babel}
 \usepackage[T1]{fontenc}
 
-%Links and clickable ToC
+% Links and clickable ToC
 \usepackage{hyperref}
+
+% Images
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -126,18 +129,125 @@ I samarbejde med vores mentor, Julian, blev vi enige om, at vi skulle lave en
 løsning, der kunne tage i mod data og visualisere det i form af 
 grafer, tabeller og lign.
 
-\subsubsection{Organisering}
+\subsection{Organisering}
 Julian og hans kollega Dennis ville være vores produkt owners,
 mens vores chef Mark ville være vores stakeholder.
 Ellers var Kasper, Mike og jeg fuldstændigt selvstyrende.
 
+\subsubsection{Internt i teamet}
 Vi fik et confluence rum, som vi har brugt til at dele forskellige filer, 
 domæne modeller og wireframes blandt andet.
 
-Til den daglige styring og organisering af vores arbejde,
-fik vi en azure devops portal.
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{kanbanboard.png}
+    \centering
+    \label{kanban}
+    \caption{Eksempel på vores kanban board}
+\end{figure}
+
+Til den daglige styring og organisering af vores arbejde
+har vi brugt en Azure DevOps portal.
+Vi brugte et Azure Board som et kanban-board
+til at organisere det daglige arbejde, se figur \ref{kanban}.
+
+Vi holdte daglige stand up møder.
+Og hver anden uge holdte vi et retrospektiv for at sikre,
+at vi blev ved med at blive bedre til at arbejde sammen.
+
+Vi opstillede også kodestandarder, som vi lagde på confluence.
+På den måde ville alle i teamet have adgang til dem,
+og vi kunne også nemt løbende opdatere dem.
+En del af vores standarder var,
+at alt kode skal reviewes af et andet teammedlem.
+For at sikre det opstillede vi regler,
+så der ikke kunne pushes direkte til vores main branch.
+
+\subsubsection{Resten af UR}
+Jeg skal indrømme, at da jeg først hørte,
+at vi ville blive vores ejet selvstændige hold,
+var jeg bange for,
+at vi ville blive parkeret i et hjørne og glemt indtil de 3 måneder var gået.
+Heldigvis gjorde Mark, Julian og Dennis det hurtigt klart for mig,
+at jeg tog fejl.
+
+Julian og Dennis deltog i vores daglige stand ups.
+Der var de begge rigtigt gode til at komme med deres syn på løsninger til blokerende opgaver.
+
+Julian arrangerede også, at vi holdte en demo hver anden uge.
+Under demoen kom de med feedback og idéer til forbedringer for vores produkt.
+Mark deltog også i demoerne.
+
+Vores afdeling af UR holdte også et all-hands møde en gang i kvartalet,
+hvor hvert team præsenterede, hvad de arbejdede med.
+Det skulle vi også,
+og til mødet var der stor interesse for vores produkt.
 
 \subsection{Full Stack udvilking}
+Da vi var et selvstændigt udvilkingsteam betød det også,
+at vi havde ansvaret for alt udvikling af vores produkt
+lige fra frontend til database.
+
+\subsubsection{Teknologi Valg}
+Det første vi skulle gøre var at blive enige om,
+hvilke teknologier vi ville bruge.
+Til dette var Julian og Dennis en stor hjælp som sparingspartnere.
+Det var nemmere at tage valgne,
+når de kunne fortælle,
+hvad der blev brugt i virksomheden.
+Det handlede om at vælge det rigtige værktøj til opgaven,
+men når vi stod med 2 lige gode værktøjer,
+var det oplagt at bruge det samme værktøj som vores kollegaer.
+
+\paragraph{Database}
+Som database havde vi først tænkt på at bruge en MongoDB dokument database.
+Det blev dog tydeligt for os, da vi satte os mere end i vores problemdomæne,
+at vores data havde for mange relationer til, at det ville blive en success.
+
+Derfor valgte vi at bruge en SQL database.
+Tidligt i udvilkingsforløbet brugte vi blot en SQLite database.
+Vi var dog nød til at gå væk fra en SQLite database,
+da dens integration med Grafana ikke er særligt god.
+
+I stedet valgte vi at bruge en PostgreSQL database.
+Julian og Dennisses team var igang med at migrere fra en MongoDB til en PostgreSQL.
+Derfor valgte vi at bruge det i stedet for et af alternativerne,
+så det var nemt at udveksle erfaringer med dem.
+
+\paragraph{Backend}
+Det var oplagt at bruge .NET til vores backend,
+da det blev brugt i resten af URs webløsninger.
+Derfor ville vi have rig mulighed for at få hjælp
+og udveksle erfaringer med de andre teams.
+
+Som ekstra bonus var det et sprog, 
+vi alle tre havde rig erfaring med at bruge grundet vores uddannelse.
+
+\paragraph{Frontend}
+Til frontenden valgte vi at bruge Blazor.
+Vi valgte det,
+da vi alle tre tidligere på uddannelsen havde arbejdet med Razor Pages,
+og derfor havde vi erfaring med at bruge C\# til at skrive frontend.
+
+Vi følte heller ikke, at det ville give et bedre produkt for UR,
+hvis vi gav os igang med at lære at bruge Angular, React eller Vue.js.
+
+\paragraph{Tye}
+For at gøre det nemmere for os at udvikle en distribueret applikation
+valgte vi at bruge et værktøj, der hedder
+\href{https://github.com/dotnet/tye}{Tye}.
+Tye gjorde det meget nemmere for os at udvikle,
+da det selv kunne køre vores applikationer op med én kommando.
+Alt hvad var nødvendigt var,
+at vi havde lavet en yaml fil,
+hvor vi fortalte Tye,
+hvilke applikationer skulle køres op.
+Et udsnit af vores yaml fil kan ses på figur \ref{tye}.
+
+Tye understøttede også hotreloading både af vores frontend og backend,
+da begge var .NET applikationer.
+
+\paragraph{Grafana}
+
 
 \section{Udbytte}
 \label{udbytte}
