@@ -29,6 +29,7 @@
 
 \section{Indledning}
 
+\newpage
 \section{Forventninger}
 Som led i datamatikeruddannelsen var jeg i et praktikforløb hos Bankdata.
 I det praktikforløb blev jeg en del af et udviklingsteam,
@@ -85,6 +86,7 @@ Se afsnit \ref{praktikforloeb} for en forklaring på hvorfor.
 Dog har jeg lært en helt masse andet, 
 som jeg vil komme ind på i afsnit \ref{udbytte}.
 
+\newpage
 \section{Praktikforløbet}
 \label{praktikforloeb}
 I dette afsnit vil jeg beskrive selve praktikforløbet.
@@ -138,7 +140,7 @@ Ellers var Kasper, Mike og jeg fuldstændigt selvstyrende.
 Vi fik et confluence rum, som vi har brugt til at dele forskellige filer, 
 domæne modeller og wireframes blandt andet.
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
     \includegraphics[width=\linewidth]{kanbanboard.png}
     \centering
     \label{kanban}
@@ -188,6 +190,7 @@ at vi havde ansvaret for alt udvikling af vores produkt
 lige fra frontend til database.
 
 \subsubsection{Teknologi Valg}
+\label{teknologi_valg}
 Det første vi skulle gøre var at blive enige om,
 hvilke teknologier vi ville bruge.
 Til dette var Julian og Dennis en stor hjælp som sparingspartnere.
@@ -243,12 +246,69 @@ hvor vi fortalte Tye,
 hvilke applikationer skulle køres op.
 Et udsnit af vores yaml fil kan ses på figur \ref{tye}.
 
+\begin{figure}[ht!]
+    \includegraphics[scale=0.7]{tye.png}
+    \centering
+    \label{tye}
+    \caption{Uddrag af vores tye.yml fil}
+\end{figure}
+
 Tye understøttede også hotreloading både af vores frontend og backend,
 da begge var .NET applikationer.
 
 \paragraph{Grafana}
+En fejltagelse vi gjorde tidligt i projektet var at planlægge og lave hele løsningen fra bunden af.
+Heldigvis gjorde Julian og Dennis os opmærksomme på,
+at der var ingen problemer med at bruge eksterne biblioteker og andres produkter i UR.
+De foreslog, at vi kiggede nærmere på nogle af de allerede eksisterende graf visualiseringsværktøjer,
+som andre har haft lavet.
+
+Vi valgte at bruge Grafana, da det er open source, og det er lavet med det specifikke formål at visualisere metrikker.
+
+\subsubsection{Eksempler på opgaver}
+I løbet af praktikforløbet løste jeg en række af forskellige opgaver.
+Som jeg skrev om i afsnit \ref{teknologi_valg},
+bestod vores teknolig stack af mange forskellige ting, og det var vores ejet ansvar,
+at det virkede.
+
+I teamet var der bred enighed om, at vi skulle undgå, 
+at hver person sad med sit ejet ansvarsområde.
+Efter min mening er der to store grunde til,
+at undgå det:
+
+\begin{enumerate}
+    \item Busulykke effekten - Hvis én af os skulle blive ramt af en bus,
+     ville vi ikke risikere at en masse viden om vores produkt gik tabt.
+    \item Læring - Jeg var i mit praktikforløb for at lære.
+    Derfor skulle der være plads til,
+    at jeg kunne tage opgaver,
+    som jeg ikke havde nok viden til at løse, selvom en af de andre havde.
+\end{enumerate}
+
+I den første 2 ugers cyklus sad jeg mest med vores backend.
+Jeg skrev en REST api med de endpoints, vi skulle burge på det tidspunkt.
+Derefter gik jeg bevidst efter at lave opgaver i vores frontend,
+så andre i teamet kunne arbejde med backenden.
+
+Da skelettet af vores løsning var på plads
+en meget simpel frontend og backend, var det nemmere at lave fullstack stories.
+
+\paragraph{Product Team Vision}
+Et eksempel på en af de opgaver var,
+at jeg skulle lave en måde for vores brugere at se et valgt product teams vision.
+Desuden skulle jeg muliggøre, at visionen kunne ændres,
+hvis man havde ret til det.
+
+Først skulle jeg ændre vores domæne model.
+Derefter skulle jeg ændre vores product team model og database.
+Desuden skulle jeg lave et PATCH endpoint for vores product team model.
+Til sidst skulle jeg lave en side i vores frontend,
+der viste product teamets vision.
+Siden skulle også checke, om du havde ret til at ændre visionen og,
+ hvis det var tilfældet, lade dig gøre det.
 
 
+\newpage
 \section{Udbytte}
 \label{udbytte}
 \subsection{Selvstyring}
