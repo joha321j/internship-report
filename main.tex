@@ -50,16 +50,17 @@ Målene har hjulpet mig med at klargøre over for mig selv,
 hvad jeg har af forventninger til mig selv under praktikforløbet.
 
 I store træk gik læringsmålene ud på, 
-at jeg gerne ville blive bedre til at være en del af et selvstyrende
-udvilkingsteam.
+at jeg gerne ville blive bedre til at være en del af et professionelt
+udviklingsteam.
 
 \subsubsection*{Personlige Læringsmål}
+\label{personligelaeringsmaal}
 \begin{itemize}
     \item Få mere erfaring i at indgå fagligt og professionelt i en 
     softwareudviklingsvirksomhed
     \item Forbedre mine evner i at deltage i et professionelt selvstyrende 
     udviklingsteam
-    \item Få erfaring med brug af \href{https://en.wikipedia.org/wiki/OKR}{OKR's}
+    \item Få erfaring med brug af \href{https://en.wikipedia.org/wiki/OKR}{OKRs}
      til at opsætte og organisere mit teams mål for vores produkt.
 \end{itemize}
 
@@ -76,7 +77,7 @@ som teamet, jeg ville blive en del af, brugte.
     \end{itemize}
     \item Forbedre mine evner inden for OpenAPI dokumentation ved brug af
     Swagger
-    \item Få erfaring og kompetencer inden for brug af ElasticSearch
+    \item Få erfaring og kompetencer inden for brug af Elasticsearch
     \item Få erfaring inden for brug af MongoDB
 \end{itemize}
 
@@ -91,25 +92,26 @@ som jeg vil komme ind på i afsnit \ref{udbytte}.
 \label{praktikforloeb}
 I dette afsnit vil jeg beskrive selve praktikforløbet.
 Først vil jeg beskrive, hvordan den daglige organisering var.
-Dernæst vil jeg komme med eksempler på arbejdsopgaver.
+Dernæst vil jeg beskrive de teknologier vi brugte og komme med eksempler på arbejdsopgaver.
 
-\subsection{Ejet produktteam}
+\subsection{Eget produktteam}
+\label{produktteam}
 På første dag i praktikken blev jeg indformeret om,
 at jeg ikke ville blive en del af myUR - Fleet.
 myUR - Fleet er det produktteam, som jeg fik at vide under praktikinterviewet,
 at jeg ville blive en udvikler hos.
 
 I stedet fik Kasper, Mike og jeg at vide,
-at vi 3 ville lave vores ejet produktteam.
+at vi 3 ville lave vores eget produktteam.
 Dernæst fik vi en problemstilling, som vi skulle løse.
 
 \subsubsection{Problemstilling}
 Universal Robots er inden for det sidste år skiftet struktur til at være 
 produkt-orienterede i stedet for projektorienterede.
 I den forbindelse har de forsøgt at give deres teams mere selvstyre ved at 
-adoptere OKR's.
+adoptere OKRs.
 
-Kort fortalt går OKR's ud på, 
+Kort fortalt går OKRs ud på, 
 at den øverste ledelse sætter overordnede mål for virksomheden.
 Ud fra de mål sætter afdelingerne mål for,
 hvordan de kan hjælpe ledelsen med at opnå deres mål.
@@ -118,7 +120,7 @@ hvordan de kan hjælpe deres afdeling med at opnå afdelingens mål.
 På denne måde har produktteamet selv ansvar for,
 hvordan de giver værdi til virksomheden.
 
-En del af OKR's er key results. 
+En del af OKRs er key results. 
 Key results er målbare resultater, der skal bruges til at se,
 om produktteamet er på vej mod deres mål.
 
@@ -132,6 +134,7 @@ løsning, der kunne tage i mod data og visualisere det i form af
 grafer, tabeller og lign.
 
 \subsection{Organisering}
+\label{organisering}
 Julian og hans kollega Dennis ville være vores produkt owners,
 mens vores chef Mark ville være vores stakeholder.
 Ellers var Kasper, Mike og jeg fuldstændigt selvstyrende.
@@ -166,7 +169,7 @@ så der ikke kunne pushes direkte til vores main branch.
 
 \subsubsection{Resten af UR}
 Jeg skal indrømme, at da jeg først hørte,
-at vi ville blive vores ejet selvstændige hold,
+at vi ville blive vores eget selvstændige hold,
 var jeg bange for,
 at vi ville blive parkeret i et hjørne og glemt indtil de 3 måneder var gået.
 Heldigvis gjorde Mark, Julian og Dennis det hurtigt klart for mig,
@@ -268,17 +271,17 @@ Vi valgte at bruge Grafana, da det er open source, og det er lavet med det speci
 \subsubsection{Eksempler på opgaver}
 I løbet af praktikforløbet løste jeg en række af forskellige opgaver.
 Som jeg skrev om i afsnit \ref{teknologi_valg},
-bestod vores teknolig stack af mange forskellige ting, og det var vores ejet ansvar,
+bestod vores teknolig stack af mange forskellige ting, og det var vores eget ansvar,
 at det virkede.
 
 I teamet var der bred enighed om, at vi skulle undgå, 
-at hver person sad med sit ejet ansvarsområde.
+at hver person sad med sit eget ansvarsområde.
 Efter min mening er der to store grunde til,
 at undgå det:
 
 \begin{enumerate}
     \item Busulykke effekten - Hvis én af os skulle blive ramt af en bus,
-     ville vi ikke risikere at en masse viden om vores produkt gik tabt.
+     ville vi ikke risikere at vigtig viden om vores produkt gik tabt.
     \item Læring - Jeg var i mit praktikforløb for at lære.
     Derfor skulle der være plads til,
     at jeg kunne tage opgaver,
@@ -290,8 +293,8 @@ Jeg skrev en REST api med de endpoints, vi skulle burge på det tidspunkt.
 Derefter gik jeg bevidst efter at lave opgaver i vores frontend,
 så andre i teamet kunne arbejde med backenden.
 
-Da skelettet af vores løsning var på plads
-en meget simpel frontend og backend, var det nemmere at lave fullstack stories.
+Efter vi havde fået et skelet af vores løsning lavet,
+havde vi nemmere ved at formulere stories, som berørte hele løsningen.
 
 \paragraph{Product Team Vision}
 Et eksempel på en af de opgaver var,
@@ -307,12 +310,103 @@ der viste product teamets vision.
 Siden skulle også checke, om du havde ret til at ændre visionen og,
  hvis det var tilfældet, lade dig gøre det.
 
+ \paragraph{Flere datakilder til én graf}
+En anden opgave jeg løste var, at jeg skulle muliggøre,
+at en graf kunne vise flere data kilder.
+Heldigvis var det en funktionalitet, som Grafana allerede understøttede.
+
+Opgaven bestod derfor af først at finde ud af,
+hvordan request bodyen til Grafana skulle se ud.
+Dernæst skulle jeg ændre backenden,
+så den tog sit request og oversatte det til et request som Grafana kunne forstå.
+Til sidst skulle jeg ændre frontenden,
+så vores brugere kunne vælge flere datakilder til deres grafer.
 
 \newpage
 \section{Udbytte}
 \label{udbytte}
+I dette afsnit vil jeg beskrive,
+hvad jeg føler,
+er de vigtigste ting jeg har lært under mit praktikforløb.
+
 \subsection{Selvstyring}
+Når jeg kigger tilbage,
+har det været en meget lærerig oplevelse at være en del af mit eget team.
+Som beskrevet i afsnit \ref{produktteam} og \ref{organisering},
+havde vi selv kontrol over, hvad vi lavede og hvilken retning vi gik med produktet.
+
+Det var selvfølgelig ikke uvant for mig,
+da det var samme princip, vi havde brugt i gruppearbejde under studiet.
+Konteksten var dog ikke den samme.
+Under studiet var det kun min egen læring, jeg havde ansvar for.
+Her i praktikforløbet følte jeg, at der var mere på spil.
+Det var her, jeg havde mulighed for at vise UR, hvad jeg kunne.
+Derudover var jeg også en repræsentant for UCL, om jeg ville det eller ej.
+
+Selvom der var mere på spil, var det rart at mærke,
+at de principper inden for selvstyring,
+vi havde lært under studiet også kunne bruges hos UR.
+
+Jeg føler ikke, at jeg har lært en masse nye ting inden for selvstyring.
+Derimod er jeg blevet mere sikker på, at min tilgang til det fungerer.
+
+\subsubsection{Opfyldelse af personlige læringsmål}
+Selvom praktikforløbet kom til at have en anden struktur end først forventet,
+føler jeg stadig, at jeg har opfyldt mine personlige læringsmål,
+som står i afsnit \ref{personligelaeringsmaal}
+
+Mit første mål omhandlede at blive bedre til at være en del af en IT virksomhed.
+Da jeg skrev det, havde jeg i tankerne,
+at jeg ville være en del af et eksisterende team,
+hvor jeg ville agere som en ny medarbejder.
+I stedet blev jeg en del af et helt nyt team,
+hvor vi selv havde ansvar for vores udvikling.
+
+Når ser tilbage er jeg glad for, at vi blev vores eget team.
+Jeg havde allerede prøvet at være en del af et eksisterende team,
+da jeg var i praktik hos Bankdata.
+Derfor tror jeg, at jeg har fået mere ud af denne nye oplevelse.
+Jeg føler også,
+at jeg har forbedret mine enver til at være en del af et selvstyrende team.
+Jeg er blandt andet blevet bedre til at prioritere vores opgaver ud fra den viden,
+som vi tilegnede os under demoer med vores product owners.
+
+Det var første gang, at jeg var i en virksomhed, som brugte OKRs.
+Det var heller ikke noget, som jeg havde erfaring med fra studiet.
+Jeg synes, at OKRs er en interessant måde at give udviklingsteam mere selvstyre.
+Jeg er glad for at have prøvet en ny tilgang til det end dem,
+som jeg har lært under studiet.
+
 \subsection{Ny Teknologi}
-\subsubsection{Integration med Grafana}
+Inden jeg startede, forventede jeg,
+at jeg skulle lære at bruge Elasticsearch og MongoDB.
+Det viste sig dog ikke at være tilfældet.
+Det betyder dog ikke, at jeg ikke har arbejdet med værktøjer og teknologier,
+som jeg ikke kendte til før.
+Det har bare været nogle andre.
+
+Jeg vil ikke gå i dybden med hver enkelt ny teknologi og nyt værktøj,
+da det vil nemt blive en uinteressant opremsning.
+I stedet synes jeg det er vigtigere at diskutere den vigtigste ting,
+som jeg har lært ved at bruge dem.
+
+I mit tidligere praktikforløb og studiejob hos Bankdata
+og på studiet var det fastlåst,
+hvilke værktøjer og teknologier jeg havde at arbejde med.
+Det var af forskellige årsager, men det gav mening i begge kontekster.
+Jeg opdagede dog under dette praktikforløb, at det har betydet for mig,
+at jeg ikke har været god til at følge med i,
+hvad der kommer af nyt inden for mit felt.
+
+Det er en skam, da en masse nye ting er gået min næse forbi.
+Jeg mener ikke, at det nyeste altid er det bedste.
+Derimod mener jeg, at det er vigtigt,
+at jeg kender til så mange værktøjer som muligt,
+så jeg kan vælge det rigtige værktøj i en given situation.
+
+Jeg har derfor forsøgt at rette op på dette ved aktivt at opsøge kilder for nyheder inden for software udvikling.
+
+\newpage
+\section{Konklusion}
 
 \end{document}
